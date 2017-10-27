@@ -7,3 +7,10 @@ v8 是Google开源的高性能js引擎。它是通过C++编写的，并且应用
 
 链接：介绍 | 开发入门 | 贡献
 
+阅读以下文章可以学习到更多信息：
+
+- 用户交流群组：[https://groups.google.com/forum/#!forum/v8-users](https://groups.google.com/forum/#!forum/v8-users)
+- V8博客: http://v8project.blogspot.com/
+- bugs: https://bugs.chromium.org/p/v8/issues/entry?template=Defect%20report%20from%20user
+- Logos (svg格式): [V8](https://github.com/v8/v8/wiki/images/v8logo.svg), [Ignition](https://github.com/v8/v8/wiki/images/v8ignitionlogo.svg), [TurboFan
+](https://github.com/v8/v8/wiki/images/v8turbofanlogo.svg)
