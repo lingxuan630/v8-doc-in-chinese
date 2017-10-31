@@ -24,3 +24,20 @@ V8的master分支在github上有一个官方的镜像：http://github.com/v8/v8-
    
 ## 如何开始
 
+确认你的`depot_tools`已经是最新的，执行下面：
+
+```
+gclient
+```
+
+然后获取V8，包括所有的分支和依赖
+
+```
+mkdir ~/v8
+cd ~/v8
+fetch v8
+cd v8
+```
+
+
+
