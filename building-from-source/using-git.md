@@ -1,1 +1,26 @@
+# Git 仓库
+
+V8的Git仓库地址：https://chromium.googlesource.com/v8/v8.git
+
+V8的master分支在github上有一个官方的镜像：http://github.com/v8/v8-git-mirror
+
+不要通过简单的 `git-clone`这些url来拉去V8的源码，你可以通过一下的步骤来获得：
+
+## 准备工作
+
+1. 安装Git. 在Ubuntu系统可以通过简单的apt-get安装
+
+   ```
+   apt-get install git
+   ```
+   
+   在windows，你可以下载安装包: https://git-scm.com/
+   
+2. depot_tools. 查看具体[安装步骤](http://dev.chromium.org/developers/how-tos/install-depot-tools)
+
+3. 为了能够提交代码，你还需要创建一个.netrc 文件，并且把git密码放进去:
+
+   访问[https://chromium.googlesource.com/new-password](https://chromium.googlesource.com/new-password) ，使用您的提交者帐户登录（例如@ chromium.org帐号，non-chromium.org）。 注意：创建新密码不会自动撤销任何以前创建的密码。 请确保您使用与git config user.email设置的电子邮件相同的电子邮件。看看上面那个大大都灰色框部分的shell命令，然后复制粘贴到你的shell中。
+   
+## 如何开始
 
