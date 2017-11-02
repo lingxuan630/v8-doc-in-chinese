@@ -67,5 +67,11 @@ git pull
 gclient sync
 ```
 
-## 提交代码
+## 发送代码供审核
+```
+git cl upload
+```
 
+## 提交
+
+您可以使用codereview中的CQ复选框来提交（首选）。
