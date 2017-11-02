@@ -39,5 +39,33 @@ fetch v8
 cd v8
 ```
 
+之后你可以切换到你想要的分支了。
 
+或者，您可以指定如何跟踪新分支：
+
+```
+git config branch.autosetupmerge always
+git config branch.autosetuprebase always
+```
+
+或者，您可以这样创建新的本地分支（推荐）
+
+```
+git new-branch mywork
+```
+
+## 保持更新
+
+通过`git pull`的方式更新你当前的代码，注意，如果你不在一个分支上，pull动作是不生效的，你可以用`git fetch`的方法来代替。
+
+```
+git pull
+```
+
+有时候V8的依赖包已经更新，你可以通过以下方式更新
+```
+gclient sync
+```
+
+## 提交代码
 
