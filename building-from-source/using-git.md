@@ -74,4 +74,23 @@ git cl upload
 
 ## 提交
 
-您可以使用codereview中的CQ复选框来提交（首选）。
+您可以使用codereview中的CQ复选框来提交（首选）。你可以在[chromium instructions](http://www.chromium.org/developers/testing/commit-queue)上阅读关于CQ flag和故障排除。
+
+如果你需要了解更多，把以下内容添加到你的提交信息中。
+
+```
+CQ_INCLUDE_TRYBOTS=tryserver.v8:v8_linux_nosnap_rel
+```
+
+更新分支：
+```
+git pull --rebase origin
+```
+
+最后提交:
+
+```
+git cl land
+```
+
+## 项目成员
