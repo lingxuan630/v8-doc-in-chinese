@@ -19,4 +19,12 @@ gclient sync
 而GN是通过[depot_tools](https://www.chromium.org/developers/how-tos/install-depot-tools)分发的。
 
 ## 构建
-可以通过两种方法构建V8。
+
+可以通过两种方式构建V8。一种是使用较低级别的命令行的原始方式，另外一种是使用封装的脚本的简易方式。
+
+构建说明(基于封装的简易方式)
+使用一些方便的封装后的脚本来生成文件，例如：
+```
+tools/dev/v8gen.py x64.release
+```
+调用`v8gen.py --help`获取更多信息
