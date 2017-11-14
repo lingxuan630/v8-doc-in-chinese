@@ -27,4 +27,9 @@ gclient sync
 ```
 tools/dev/v8gen.py x64.release
 ```
-调用`v8gen.py --help`获取更多信息
+调用`v8gen.py --help`获取更多信息，你可以通过调用`v8gen`来调用脚本，也可以在其他`checkout`中使用它。
+
+以下列举了一些可用配置：
+`tools/dev/v8gen.py list`
+`tools/dev/v8gen.py list -m client.v8`
+
