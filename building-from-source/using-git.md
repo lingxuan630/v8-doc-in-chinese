@@ -92,5 +92,3 @@ git pull --rebase origin
 ```
 git cl land
 ```
-
-## 项目成员
