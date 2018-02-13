@@ -22,7 +22,7 @@ gclient sync
 
 可以通过两种方式构建V8。一种是使用较低级别的命令行的原始方式，另外一种是使用封装的脚本的简易方式。
 
-构建说明(基于封装的简易方式)
+### 基于封装的简易方式
 使用一些方便的封装后的脚本来生成文件，例如：
 ```
 tools/dev/v8gen.py x64.release
@@ -33,3 +33,48 @@ tools/dev/v8gen.py x64.release
 `tools/dev/v8gen.py list`
 `tools/dev/v8gen.py list -m client.v8`
 
+### 原始方式
+
+首先创建必要的构建文件：
+```
+gn args out.gn/foo
+```
+这时候将打开编辑器以指定[gn参数](https://chromium.googlesource.com/chromium/src/+/master/tools/gn/docs/reference.md)。你可以把`foo`更改任意的文件夹。请注意，我们使用一个单独的`out.gn`文件夹，以避免与旧的gyp文件夹相冲突。如果你不使用gyp或者保持子文件夹分离，你可以使用`out`。
+
+其实你也可以再命令行上传递参数：
+
+```
+gn gen out.gn/foo --args='is_debug=false target_cpu="x64" v8_target_cpu="arm64"  use_goma=true'
+```
+
+上面的命令会生成构建文件，以使用goma进行编译在release模式下通过arm64模拟器编译V8。可以通过以下方式查看所有`gn`的参数：
+
+```
+gn args out.gn/foo --list
+```
+
+## 编译
+编译一个全量的v8可以通过以下方式（假设gn生成到x64.release文件夹）：
+```
+ninja -C out.gn/x64.release
+```
+
+如果要编译一个特定的版本，例如d8,可以添加到命令行
+
+```
+ninja -C out.gn/x64.release d8
+```
+
+## 测试
+
+您可以将输出目录传递给测试驱动程序。 其他相关flags将从构建中带出来：
+
+```
+tools/run-tests.py --outdir out.gn/foo
+```
+
+你也可以测试你最近编译的版本(在 `out.gn`):
+
+```
+tools/run-tests.py --gn
+```
